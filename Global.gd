@@ -65,6 +65,9 @@ func update_time(t):
 
 func next_level():
 	level += 1
+	var current_level = Levels.levels[level]
+	lives = current_level["lives"]
+	update_lives(0)
 	var _scene = get_tree().change_scene("res://Game.tscn")
 
 func end_game(success):
