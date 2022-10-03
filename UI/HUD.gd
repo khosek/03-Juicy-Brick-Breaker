@@ -5,13 +5,22 @@ export var indicator_index = 25
 onready var Indicator = load("res://UI/Indicator.tscn")
 
 func _ready():
-	update_score()
+	$Banked_Score.text = "Score: 0"
 	update_time()
 	update_lives()
 
 
-func update_score():
-	$Score.text = "Score: " + str(Global.score)
+func update_score(s):
+	#$Score.text = "Score: " + str(Global.score)
+	$Floating_Score.get_child(1).stop_all()
+	$Floating_Score.total_score += s
+	if $Floating_Score.rect_scale.x < 1:
+		$Floating_Score.rect_scale = Vector2(1,1)
+
+func bank_score():
+	Global.score += $Floating_Score.total_score
+	$Banked_Score.total_score = Global.score
+	$Floating_Score.reset()
 
 func update_time():
 	$Time.text = "Time: " + str(Global.time)

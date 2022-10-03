@@ -18,4 +18,10 @@ func _input(event):
 		target.x += event.relative.x
 
 func hit():
-	pass
+	var bank_sound = get_node_or_null("/root/Game/Bank_Sound")
+	if bank_sound != null:
+		bank_sound.play()
+	# Banking score
+	var HUD = get_node_or_null("/root/Game/UI/HUD")
+	if HUD != null:
+		HUD.bank_score()

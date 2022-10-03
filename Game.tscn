@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Brick/Brick_Container.gd" type="Script" id=1]
 [ext_resource path="res://Paddle/Paddle.tscn" type="PackedScene" id=2]
@@ -8,6 +8,11 @@
 [ext_resource path="res://Wall/Wall.gd" type="Script" id=6]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=7]
 [ext_resource path="res://UI/Instructions.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/brick.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/score.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/bank.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/wall_hit.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/fall.wav" type="AudioStream" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 100, 500 )
@@ -82,3 +87,21 @@ visible = false
 
 [node name="Instructions" parent="UI" instance=ExtResource( 8 )]
 pause_mode = 2
+
+[node name="Score_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="Bank_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -15.0
+
+[node name="Brick_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -15.0
+
+[node name="Fall_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
+[node name="Wall_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -20.0

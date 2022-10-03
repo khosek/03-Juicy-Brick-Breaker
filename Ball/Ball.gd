@@ -36,4 +36,10 @@ func _integrate_forces(state):
 		state.linear_velocity = state.linear_velocity.normalized() * max_speed
 
 func die():
+	var fall_sound = get_node_or_null("/root/Game/Fall_Sound")
+	if fall_sound != null:
+		fall_sound.play()
+	var score = get_node_or_null("/root/Game/UI/HUD/Floating_Score")
+	if score != null:
+		score.reset()
 	queue_free()

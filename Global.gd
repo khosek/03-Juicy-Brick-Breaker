@@ -42,10 +42,10 @@ func reset():
 	starting_in = default_starting_in
 
 func update_score(s):
-	score += s
+#	score += s
 	var HUD = get_node_or_null("/root/Game/UI/HUD")
 	if HUD != null:
-		HUD.update_score()
+		HUD.update_score(s)
 
 func update_lives(l):
 	lives += l
