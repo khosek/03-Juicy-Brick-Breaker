@@ -7,14 +7,14 @@ var splash_strength = 10.0
 var animation_time = 0.5
 
 var colors = [
-	Color8(0, 0, 255),
-	Color8(0, 81, 255),
-	Color8(0, 94, 243),
-	Color8(0, 93, 190),
-	Color8(0, 88, 127),
-	Color8(0, 82, 72),
-	Color8(0, 76, 31),
-	Color8(7, 68, 7)
+	Color8(242, 140, 40),
+	Color8(237, 116, 56),
+	Color8(227, 94, 70),
+	Color8(211, 75, 82),
+	Color8(191, 60, 91),
+	Color8(167, 50, 97),
+	Color8(140, 44, 99),
+	Color8(112, 41, 99)
 ]
 
 func _ready():

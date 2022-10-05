@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Brick/Brick_Container.gd" type="Script" id=1]
 [ext_resource path="res://Paddle/Paddle.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Assets/bank.wav" type="AudioStream" id=11]
 [ext_resource path="res://Assets/wall_hit.wav" type="AudioStream" id=12]
 [ext_resource path="res://Assets/fall.wav" type="AudioStream" id=13]
+[ext_resource path="res://Ball/Comet_Container.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 100, 500 )
@@ -77,6 +78,9 @@ margin_bottom = 10.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Container/Wall_Top"]
 position = Vector2( 512, -90 )
 shape = SubResource( 2 )
+
+[node name="Comet_Container" type="Node2D" parent="."]
+script = ExtResource( 14 )
 
 [node name="Brick_Container" type="Node2D" parent="."]
 script = ExtResource( 1 )

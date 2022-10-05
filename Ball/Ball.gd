@@ -23,6 +23,7 @@ func _on_Ball_body_entered(body):
 	
 	
 func _integrate_forces(state):
+	comet()
 	if position.y > Global.VP.y + 100:
 		die()
 	if accelerate:
@@ -43,3 +44,11 @@ func die():
 	if score != null:
 		score.reset()
 	queue_free()
+
+func comet():
+	var comet_container = get_node_or_null("/root/Game/Comet_Container")
+	if comet_container != null:
+		var sprite = $Trail_Sprite.duplicate()
+		sprite.show()
+		sprite.global_position = global_position
+		comet_container.add_child(sprite)
