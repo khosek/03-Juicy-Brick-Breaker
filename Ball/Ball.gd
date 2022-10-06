@@ -43,6 +43,7 @@ func die():
 	var score = get_node_or_null("/root/Game/UI/HUD/Floating_Score")
 	if score != null:
 		score.reset()
+	Global.update_lives(-1)
 	queue_free()
 
 func comet():

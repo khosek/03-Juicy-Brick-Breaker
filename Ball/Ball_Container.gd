@@ -1,16 +1,16 @@
 extends Node2D
 
 var Ball = null
+var num_balls = 1
 
 func _ready():
 	Ball = load("res://Ball/Ball.tscn")
 	make_ball()
 
 func _physics_process(_delta):
-	if get_child_count() == 0:
-		Global.update_lives(-1)
+	if get_child_count() < num_balls:
+#		Global.update_lives(-1)
 		make_ball()
-
 
 func make_ball():
 	var ball = Ball.instance()

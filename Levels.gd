@@ -5,7 +5,7 @@ var levels = [
 		"name":"Level 1",
 		"instructions":"Break all the Bricks",
 		"multiplier":1.0,
-		"timer":120,
+		"timer":140,
 		"lives":5,
 		"layout":[
 			[100,100,100,100,100,100,100,100]
@@ -22,7 +22,7 @@ var levels = [
 		"name":"Level 2",
 		"instructions":"Break all the Bricks\nBeware - your time and lives are reduced!",
 		"multiplier":1.5,
-		"timer":100,
+		"timer":120,
 		"lives":4,
 		"layout":[
 			[100,100,100,100,100,100,100,100]
