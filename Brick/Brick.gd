@@ -24,7 +24,7 @@ func _ready():
 	position = new_position
 
 func _physics_process(_delta):
-	if dying:
+	if dying and not $Death_Particles.emitting:
 		queue_free()
 
 func hit():
@@ -35,11 +35,14 @@ func hit():
 	var brick_container = get_node_or_null("/root/Game/Brick_Container")
 	if brick_container != null:
 		brick_container.splash(global_position, splash_strength)
+	$Death_Particles.color = $ColorRect.color
+	$Death_Particles.emitting = true
 	die()
 
 func die():
 	dying = true
 	collision_layer = 0
+	$CollisionShape2D.disabled = true
 	$ColorRect.hide()
 	Global.update_score(score)
 	get_parent().check_level()
