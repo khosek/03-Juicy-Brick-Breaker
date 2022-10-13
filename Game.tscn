@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Brick/Brick_Container.gd" type="Script" id=1]
 [ext_resource path="res://Paddle/Paddle.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Assets/wall_hit.wav" type="AudioStream" id=12]
 [ext_resource path="res://Assets/fall.wav" type="AudioStream" id=13]
 [ext_resource path="res://Ball/Comet_Container.gd" type="Script" id=14]
+[ext_resource path="res://Assets/Background_Music.mp3" type="AudioStream" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 100, 500 )
@@ -125,3 +126,8 @@ stream = ExtResource( 13 )
 [node name="Wall_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 volume_db = -20.0
+
+[node name="Music_Player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -20.0
+autoplay = true

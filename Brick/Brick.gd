@@ -42,7 +42,7 @@ func hit():
 func die():
 	dying = true
 	collision_layer = 0
-	$CollisionShape2D.disabled = true
+	$CollisionShape2D.set_deferred("Disabled", true)
 	$ColorRect.hide()
 	Global.update_score(score)
 	get_parent().check_level()
